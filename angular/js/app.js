@@ -22,11 +22,11 @@ angular.module('flightBookingApp', ['ui.router', 'xeditable']).run(function (edi
             component: 'loginComponent'
         }
 
-        // const newUserState = {
-        //     name: 'title.newuser',
-        //     url: '/newuser',
-        //     component: 'newUserComponent'
-        // }
+        const newUserState = {
+            name: 'newuser',
+            url: '/newuser',
+            component: 'newUserComponent'
+        }
 
         // const sessionState = {
         //     abstract: true,
@@ -35,17 +35,17 @@ angular.module('flightBookingApp', ['ui.router', 'xeditable']).run(function (edi
         //     component: 'sessionComponent'
         // }
 
-        // const accountState = {
-        //     name: 'session.account',
-        //     url: '/account',
-        //     component: 'accountComponent'
-        // }
+        const accountState = {
+            name: 'userAccount',
+            url: '/account',
+            component: 'userAccountComponent'
+        }
 
-        // const feedState = {
-        //     name: 'session.feed',
-        //     url: '/feed',
-        //     component: 'feedComponent'
-        // }
+        const historyState = {
+            name: 'history',
+            url: '/history',
+            component: 'historyComponent'
+        }
 
         // const tweetState = {
         //     name: 'session.tweet',
@@ -62,9 +62,9 @@ angular.module('flightBookingApp', ['ui.router', 'xeditable']).run(function (edi
         $stateProvider.state(titleState)
                 .state(searchState)
                 .state(loginState)
-            // .state(newUserState)
-            // .state(sessionState)
-            // .state(accountState)
+                .state(newUserState)
+                .state(historyState)
+                 .state(accountState)
             // .state(feedState)
             // .state(tweetState)
             // .state(userListState)

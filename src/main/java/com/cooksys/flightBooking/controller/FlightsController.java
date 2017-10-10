@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -47,7 +48,8 @@ public class FlightsController {
 		return flightService.groupFlightsByOrigin();		
 	}
 
-	@RequestMapping(value = "{origin}/{destination}")
+//	@RequestMapping(value = "{origin}/{destination}")
+	@GetMapping("{origin}/{destination}")
 	public List<List<SavedFlight>> findPaths(@PathVariable String origin, @PathVariable String destination){
 		return flightService.findPaths(origin,destination);
 	}

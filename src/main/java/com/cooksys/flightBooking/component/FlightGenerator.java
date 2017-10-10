@@ -12,7 +12,7 @@ import com.cooksys.flightBooking.pojo.Flight;
 @Component
 public class FlightGenerator {
 
-	public ArrayList<SavedFlight> generateNewFlightList() {
+public ArrayList<SavedFlight> generateNewFlightList() {
 		
 		ArrayList<SavedFlight> result = new ArrayList<>();
 
@@ -36,5 +36,4 @@ public class FlightGenerator {
 		}
 		return result;
 	}
-
 }

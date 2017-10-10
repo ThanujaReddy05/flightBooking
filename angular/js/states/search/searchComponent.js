@@ -1,6 +1,6 @@
 angular.module('flightBookingApp').component('searchComponent', {
 
-    templateUrl: './js/states/title/search/searchTemplate.html',
+    templateUrl: './js/states/search/searchTemplate.html',
     controller: 'searchController'
     // bindings: {
     //     submission: '='

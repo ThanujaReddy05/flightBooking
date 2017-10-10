@@ -1,24 +1,25 @@
 <div class="sessionTitle ">
         <strong>Welcome to COOK Systems Airlines</strong>
-                                
-<div class="sessionPanel3">
-        <!-- <ui-view></ui-view> -->
 
-        <div class="jay-box">
-                <div class="formtitle">Search for Flights
-                    <div class="formsubtitle">*required</div>
+        <div class="sessionPanel3">
+                <!-- <ui-view></ui-view> -->
+
+                <div class="jay-box">
+                        <div class="formtitle">Search for Flights
+                                <div class="formsubtitle">*required</div>
+                        </div>
+
+                        <div class="formbody">
+
+                                <div>Origin*</div> <input type="text" class="form-text" ng-model="$ctrl.origin">
+                                <div>Destination*</div> <input type="text" class="form-text" ng-model="$ctrl.destination">
+
+                        </div>
+                        <div class="formfooter">
+                                <button class='formbutton' ng-click="$ctrl.search()">Search</button>
+                        </div>
+
                 </div>
-            
-                <div class="formbody">
-            
-                    <div>Origin*</div> <input type="text" class="form-text" >
-                    <div>Destination*</div> <input type="text" class="form-text"  >
-                    
-                </div>
-            <div class="formfooter">
-                <button class='formbutton' ng-click="$ctrl.search()">Search</button>
-            </div>
-            
-            </div>
-</div>
+        </div>
+        <!-- <ui-view> <div> ng-model = "$ctrl.path" -->
 </div>

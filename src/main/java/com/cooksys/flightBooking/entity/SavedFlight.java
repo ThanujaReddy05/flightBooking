@@ -1,5 +1,6 @@
 package com.cooksys.flightBooking.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -19,6 +20,7 @@ public class SavedFlight {
 	private String origin;
 	private String destination;
 	private int flightTime;
+	@Column(name = "off_set")
 	private int offset;
 	private int layover;
 	private int totalTime;
@@ -39,13 +41,16 @@ public class SavedFlight {
 		this.destination = destination;
 		this.flightTime = flightTime;
 		this.offset = offset;
-		this.layover = 0;
+		this.layover = 1;
 		this.totalTime = flightTime;
 		
 	}
 	
 	
 	
+	
+
+
 	public SavedFlight(Integer id, String origin, String destination, int flightTime, int offset) {
 		
 		this.id = id;
@@ -53,7 +58,7 @@ public class SavedFlight {
 		this.destination = destination;
 		this.flightTime = flightTime;
 		this.offset = offset;
-		this.layover = 0;
+		this.layover = 1;
 		this.totalTime = flightTime;
 	}
 
@@ -169,7 +174,12 @@ public class SavedFlight {
 
 	
 
-
+	@Override
+	public String toString() {
+		return "SavedFlight [origin=" + origin + ", destination=" + destination + ", flightTime="
+				+ flightTime + ", offset=" + offset + ", layover=" + layover + ", totalTime=" + totalTime
+				+ ", itinerary=" + itinerary + "]";
+	}
 	
 	
 	

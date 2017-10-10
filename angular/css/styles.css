@@ -27,6 +27,9 @@ label {
     display: flex;
     flex-direction: row;
     /* max-width: 95vw; */
+    align-content: center;
+    justify-content: center;
+    align-items: center
 
 }
 
@@ -97,7 +100,7 @@ label {
 
 .sessionTitle,
 .sessionTitle2 {
-    align-self: flex-start;
+    /* align-self: flex-start; */
     text-align: center;
     min-height: 100vh;
     width: 100vw;
@@ -105,8 +108,15 @@ label {
     align-items: center;
     color: white;
     background: linear-gradient(rgba(8, 37, 105, 0.95), rgba(4, 92, 120, 0.1));
-    margin-bottom: 3vh;
+    /* margin-bottom: 3vh; */
     font-size: x-large;
+    
+}
+.sessionTitle2{
+    align-self: center;
+    align-content: center;
+    justify-content: center;
+    align-items: center
     
 }
 
@@ -118,9 +128,10 @@ label {
 
 .sessionTitle2 {
     width: 100vw;
-    align-self: flex-start;
+    /* align-self: flex-start; */
     align-items: center;
     /* padding-top: 1vh; */
+    justify-content: space-between;
 }
 
 .jay-box,

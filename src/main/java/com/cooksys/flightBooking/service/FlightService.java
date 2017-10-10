@@ -51,6 +51,8 @@ public class FlightService {
 	@Scheduled(fixedDelay = 5000)
 	private void refreshFlights() {
 		flightList = generator.generateNewFlightList();
+		System.out.println(flightList);
+		
 	}
 
 	
@@ -61,7 +63,10 @@ public class FlightService {
 		List<SavedFlight> innerListKnoxville = new ArrayList<>();
 		List<SavedFlight> innerListChattanooga = new ArrayList<>();
 		List<SavedFlight> innerListNashville = new ArrayList<>();
-
+		
+		
+		System.out.println(flightList);
+		
 		for (SavedFlight flight : flightList) {
 			String origin = flight.getOrigin();
 
@@ -88,7 +93,7 @@ public class FlightService {
 		if (!innerListNashville.isEmpty()) {
 			outerList.add(innerListNashville);
 		}
-
+//		System.out.println(outerList);
 		return outerList;
 	}
 
@@ -100,14 +105,16 @@ public class FlightService {
 		List<SavedFlight> flights = new ArrayList<>();
 		
 		visited.add(origin);
+//		System.out.println(visited);
 		
 		for (List<SavedFlight> list : groupFlightsByOrigin()) {
+//			System.out.println(list);
 			if (list.get(0).getOrigin().equals(origin)) {
 				flights = list;
 				break;
 			}
 		}
-		
+		System.out.println(flights);
 		for (SavedFlight flight : flights) {
 			if (visited.contains(flight.getDestination())) {
 				continue;
@@ -124,7 +131,9 @@ public class FlightService {
 				visited.removeLast();
 			}
 		}
+		System.out.println(result);
 		return result;
+		
 	}
 	
 	private List<List<SavedFlight>> getLayovers(LinkedList<String> visited, List<SavedFlight> path, Integer previousFlightTime,
