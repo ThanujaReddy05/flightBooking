@@ -1,0 +1,41 @@
+<div class="jay-box usertemplate" ng-repeat="user in $ctrl.userPool">
+    <div id="tester" class="formtitle">
+        <a class="jay-a" ng-click="$ctrl.goToUser(user)"> {{ user.username }}</a>
+    </div>
+    <div class="formsubtitle">
+        Joined {{ user.joined | date }}
+    </div>
+
+    <div class="formbody">
+        <div>
+            {{ user.profile.firstName }} {{ user.profile.lastName }}
+        </div>
+        <div >
+            {{ user.profile.email }}
+        </div>
+        <div>
+            {{ user.profile.phone }}
+        </div>
+    </div>
+
+    <div class="formfooter">
+        <ul class="nav nav-pills formsubtitle">
+
+            <li class="jay-li">
+                <a class="jay-a" ng-click="$ctrl.followUser(user)" ng-style="{'color': user.followedStyle }"> {{ user.followedText }}</a>
+            </li>
+            <li class="jay-li">
+                <a class="jay-a" ng-click="$ctrl.goToTweets(user)">
+                                Shrieks </a>
+            </li>
+            <li class="jay-li">
+                <a class="jay-a" ng-click="$ctrl.goToFollowers(user)">Followers</a>
+            </li>
+            <li class="jay-li">
+                <a class="jay-a" ng-click="$ctrl.goToFollowings(user)"> Following </a>
+            </li>
+        </ul>
+    </div>
+
+
+</div>

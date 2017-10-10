@@ -1,0 +1,41 @@
+<div class="account">
+    <div class="formtitle">Account settings
+        <div class="formbuttonsmall" ng-click="$ctrl.deactivateUser()">Deactivate</div>
+    </div>
+
+    <div class="formbody">
+
+        <div>
+            First Name
+        </div>
+        <div class="form-text jay-a editable" editable-text="$ctrl.submission.firstName">
+            {{ $ctrl.submission.firstName || "empty" }}
+        </div>
+
+        <div>
+            Last Name 
+        </div>
+        <div class="form-text jay-a editable" editable-text="$ctrl.submission.lastName">
+            {{ $ctrl.submission.lastName || "empty" }}
+        </div>
+
+        <div>
+            Email Address
+        </div>
+        <div class="form-text jay-a editable" editable-text="$ctrl.submission.email">
+            {{ $ctrl.submission.email || "empty" }}
+        </div>
+
+        <div>
+            Phone
+        </div>
+        <div class="form-text jay-a editable" editable-text="$ctrl.submission.phone">
+            {{ $ctrl.submission.phone || "empty" }}
+        </div>
+
+    </div>
+    <div class="formfooter">
+        <button class="formbutton" ng-click="$ctrl.modifyProfile()">Save</button>
+        <button class="formbutton" ng-click="$ctrl.reload()">Cancel</button>
+    </div>
+</div>
