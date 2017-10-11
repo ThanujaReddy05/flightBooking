@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cooksys.flightBooking.entity.Itinerary;
+import com.cooksys.flightBooking.entity.SavedFlight;
 import com.cooksys.flightBooking.entity.FlightUser;
 import com.cooksys.flightBooking.repository.ItineraryRepository;
 import com.cooksys.flightBooking.repository.UserRepository;
@@ -23,19 +24,25 @@ public class ItineraryService {
 	
 
 	public Itinerary create(Itinerary itinerary) {
+		
+//		System.out.println(itinerary);
 		FlightUser user = new FlightUser();
+//		Itinerary itineraryToAdd = new Itinerary(itinerary);
 		
 		for (FlightUser u : userRepo.findAll()) {
-			if (u.getUsername().equals(itinerary.getUser())) {
+			if(u != null){
+				if (u.getUsername().equals(user.getUsername())) {
 				user = u;
-				user.getItinerary().add(itinerary);
+//				user.getItinerary().add(flight);
+				}
 			}
 		}
 		
-//		Itinerary itinerary = new Itinerary(user);
+		Itinerary itinerary1 = new Itinerary(user);
 		itineraryRepo.saveAndFlush(itinerary);
 		userRepo.saveAndFlush(user);
-		
+		System.out.println(itinerary);
+//		System.out.println(itinerary1);
 		return itinerary;
 	}
 	

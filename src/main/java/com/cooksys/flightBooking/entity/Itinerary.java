@@ -67,6 +67,11 @@ public class Itinerary {
 		this.savedFlights = savedFlights;
 	}
 
+	@Override
+	public String toString() {
+		return "Itinerary [id=" + id + ", user=" + user + ", savedFlights=" + savedFlights + "]";
+	}
+
 
 
 }

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.cooksys.flightBooking.entity.Itinerary;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.cooksys.flightBooking.entity.FlightUser;
 
 public class UserModel {
@@ -14,7 +15,7 @@ public class UserModel {
 	private String lastName;
 	private String email;
 	private String phone;
-	
+	@JsonIgnore
 	private List<Itinerary> itinerary;
 	
 	public static UserModel createUserModel(FlightUser u) {

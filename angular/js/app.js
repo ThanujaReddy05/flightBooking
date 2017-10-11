@@ -1,6 +1,4 @@
-angular.module('flightBookingApp', ['ui.router', 'xeditable']).run(function (editableOptions) {
-    editableOptions.theme = 'bs3';
-}).config(['$stateProvider', '$urlRouterProvider',
+angular.module('flightBookingApp', ['ui.router', 'ngMap']).config(['$stateProvider', '$urlRouterProvider',
     function ($stateProvider, $urlRouterProvider) {
         
         // const flightlistState = {
@@ -36,12 +34,12 @@ angular.module('flightBookingApp', ['ui.router', 'xeditable']).run(function (edi
             component: 'newUserComponent'
         }
 
-        // const mapState = {
+        const mapState = {
             
-        //     name: 'map',
-        //     url: '/map',
-        //     component: 'mapComponent'
-        // }
+            name: 'map',
+            url: '/map',
+            component: 'mapComponent'
+        }
 
         const accountState = {
             name: 'userAccount',
@@ -55,6 +53,11 @@ angular.module('flightBookingApp', ['ui.router', 'xeditable']).run(function (edi
             component: 'historyComponent'
         }
 
+        const profileState = {
+            name: 'profile',
+            url: '/profile',
+            component: 'profileComponent'
+        }
         
 
         $stateProvider.state(titleState)
@@ -64,8 +67,8 @@ angular.module('flightBookingApp', ['ui.router', 'xeditable']).run(function (edi
                 .state(historyState)
                 .state(accountState)
                 // .state(flightlistState)
-                // .state(mapState)
-            // .state(userListState)
+                .state(mapState)
+                .state(profileState)
 
         $urlRouterProvider.otherwise('/title')
     }

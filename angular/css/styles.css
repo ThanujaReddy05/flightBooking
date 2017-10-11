@@ -322,3 +322,9 @@ strong {
     background-color: rgb(99, 138, 23);
     color: #fff;
 }
+
+ng-map {
+    align-self: center;
+    height: 50vh;
+    width: 50vw;
+}

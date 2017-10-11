@@ -18,7 +18,7 @@ const location =  {
   }
 
   this.zoom = 7
-  this.center = [35.5175, -86.5804]
+  this.center = [35.1495, -90.0490]
   this.markers = []
   this.mapPaths = []
 
@@ -39,7 +39,7 @@ const location =  {
         [nashville, knoxville, '#AA1100']
       ]
   
-      paths.forEach(args => this.addPath(...args))
+      mapPaths.forEach(args => this.addPath(...args))
   
       // add path from webservice
       $map.getMarkerByCityName('Chattanooga')
