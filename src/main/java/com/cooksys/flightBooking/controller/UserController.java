@@ -4,7 +4,10 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -18,7 +21,7 @@ import com.cooksys.flightBooking.service.UserService;
 
 @RestController
 @RequestMapping("users")
-@CrossOrigin
+@CrossOrigin(origins="*")
 public class UserController {
 
 	
@@ -29,27 +32,34 @@ public class UserController {
 	this.userService = userService;
 	}
 	
-	@RequestMapping(method = RequestMethod.POST)
+	
+	@GetMapping("{username}/{password}")
+	public boolean login(@PathVariable String username, @PathVariable String password ) {
+		
+		 return userService.login(username, password);
+		
+	}
+	@PostMapping
 	public UserModel postUser(@RequestBody FlightUser user ){
 		return userService.postUser(user);
 	}
 	
-	@RequestMapping(method = RequestMethod.GET)
+	@GetMapping
 	public List<UserModel> getAllUsers(){
 		return userService.getAllUsers();
 	}
 	
-	@RequestMapping(value = "{username}", method = RequestMethod.GET)
+	@GetMapping("users/{username}")
 	public FlightUser getUser(@PathVariable String username){
 		return userService.getUser(username);
 	}	
 	
-	@RequestMapping(value = "{username}/itinerary", method = RequestMethod.GET)
+	@GetMapping("{username}/itinerary")
 	public List<Itinerary> getItinerary(@PathVariable String username){
 		return userService.getItinerary(username);
 	}
 	
-	@RequestMapping(value = "{userId}", method = RequestMethod.DELETE)
+	@DeleteMapping("users/{userId}")
 	public UserModel deleteUser(@PathVariable Integer userId){
 		return userService.deleteUser(userId);
 	}

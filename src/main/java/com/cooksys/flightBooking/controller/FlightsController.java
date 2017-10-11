@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -37,13 +38,13 @@ public class FlightsController {
 //		this.flightService = flightService;
 //	}
 	
-	@RequestMapping
+	@GetMapping
 	public ArrayList<SavedFlight> getFlightList()
 	{
 		return flightService.getDailyFlightList();
 	}
 	
-	@RequestMapping(value = "groupflights")
+	@GetMapping("/groupflights")
 	public List<List<SavedFlight>> getShortestPath(){
 		return flightService.groupFlightsByOrigin();		
 	}
@@ -54,12 +55,12 @@ public class FlightsController {
 		return flightService.findPaths(origin,destination);
 	}
 	
-	@RequestMapping(method = RequestMethod.POST)
+	@PostMapping("/{savedFlight}")
 	public SavedFlight create(@RequestBody SavedFlight savedFlight){
 		return flightService.create(savedFlight);
 	}
 	
-	@RequestMapping(value = "/{flightId}", method = RequestMethod.PUT)
+	@PostMapping( "/{flightId}")
 	public Itinerary addItinerary(@PathVariable Integer flightId, @RequestBody Itinerary itinerary){
 		return flightService.addItinerary(flightId, itinerary);
 	}

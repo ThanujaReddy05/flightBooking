@@ -2,6 +2,14 @@ angular.module('flightBookingApp', ['ui.router', 'xeditable']).run(function (edi
     editableOptions.theme = 'bs3';
 }).config(['$stateProvider', '$urlRouterProvider',
     function ($stateProvider, $urlRouterProvider) {
+        
+        // const flightlistState = {
+           
+        //     name: 'flightlist',
+        //     url: '/flightlist',
+        //     component: 'flightlistComponent'
+        // }
+
 
         const titleState = {
             // abstract: true,
@@ -47,25 +55,15 @@ angular.module('flightBookingApp', ['ui.router', 'xeditable']).run(function (edi
             component: 'historyComponent'
         }
 
-        // const tweetState = {
-        //     name: 'session.tweet',
-        //     url: '/tweet',
-        //     component: 'tweetComponent'
-        // }
-
-        // const userListState = {
-        //     name: 'session.userlist',
-        //     url: '/userlist',
-        //     component: 'userListComponent'
-        // }
+        
 
         $stateProvider.state(titleState)
                 .state(searchState)
                 .state(loginState)
                 .state(newUserState)
                 .state(historyState)
-                 .state(accountState)
-            // .state(feedState)
+                .state(accountState)
+                // .state(flightlistState)
             // .state(tweetState)
             // .state(userListState)
 

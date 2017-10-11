@@ -1,7 +1,7 @@
-angular.module('flightBookingApp').service('userAccountService', ['$http', function ($http) {
+angular.module('flightBookingApp').service('userAccountService', ['loginService','$http', function (loginService, $http) {
 
-    // this.login = (submission) => {
-    //     return $http.post('http://localhost:8888/api/validate/login/', submission)
-    // }
+    this.createItinerary = () => {
+        return $http.post('http://localhost:8888/api/itinerary/', loginService.submission.username)
+    }
 
 }])

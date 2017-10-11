@@ -1,5 +1,8 @@
-angular.module('flightBookingApp').controller('userAccountController', ['$state',
-    function ($state) {
+angular.module('flightBookingApp').controller('userAccountController', ['utilService','userAccountService','$state',
+    function (utilService, userAccountService, $state) {
+
+        this.utilService = utilService
+        this.itinerary = []
 
         this.history = () => {
             $state.go('history')
@@ -9,5 +12,10 @@ angular.module('flightBookingApp').controller('userAccountController', ['$state'
             $state.go('history')
         }
         
+        this.createItinerary = () => {
+            userAccountService.createItinerary().then((succeedResponse) => {
+            this.itinerary = succeedResponse.data
+            })
+        }
     }
 ])

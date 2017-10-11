@@ -48,7 +48,7 @@ public class FlightService {
 
 	// The fixedDelay parameter determines how often a new day is generated as
 	// expressed in milliseconds
-	@Scheduled(fixedDelay = 5000)
+	@Scheduled(fixedDelay = 500000)
 	private void refreshFlights() {
 		flightList = generator.generateNewFlightList();
 		System.out.println(flightList);
@@ -174,7 +174,7 @@ public class FlightService {
 	}
 	
 	public SavedFlight create(SavedFlight savedFlight) {
-		return this.savedFlightRepo.save(savedFlight);
+		return savedFlightRepo.save(savedFlight);
 	}
 
 	public Itinerary addItinerary (Integer flightId, Itinerary itinerary) {

@@ -4,7 +4,8 @@ angular.module('flightBookingApp').component('titleComponent', {
     controller : 'titleController',
     bindings: {
         origin : '=',
-        destination : '='
+        destination : '=',
+        paths : '='
     }
     
 

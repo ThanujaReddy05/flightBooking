@@ -55,8 +55,20 @@ public class UserService {
 	
 
 	public UserModel deleteUser(Integer userId) {
-		UserModel result = UserModel.createUserModel(this.userRepo.findOne(userId));
-		this.userRepo.delete(userId);
+		UserModel result = UserModel.createUserModel(userRepo.findOne(userId));
+		userRepo.delete(userId);
 		return result;
 	}
+
+
+	public boolean login(String username, String password) {		
+			FlightUser user = userRepo.findByUsername(username);
+			
+			if((user.getUsername().equals(username)) && (user.getPassword().equals(password))){
+				return true;
+			}
+			
+			return false;
+		}
+	
 }

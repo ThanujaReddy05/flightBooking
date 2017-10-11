@@ -3,6 +3,11 @@ angular.module('flightBookingApp').service('utilService', ['$state', function ($
    
     this.paths = []
 
+    this.flights = []
+
+    this.buildUser = (username, password, firstName, lastName, email, phone) => {
+               return new User(username, password, firstName, lastName, email, phone)
+    }
 
     class flight {
         constructor(origin, destination, flightTime, offset, layover, totalTime) {
@@ -17,9 +22,58 @@ angular.module('flightBookingApp').service('utilService', ['$state', function ($
         getOrigin() {
             this.origin
         }
+
         getDestination() {
             this.destination
         }
+
+        getFlightTime() {
+            this.flightTime
+        }
         
+        getOffset() {
+            this.offset
+        }
+        
+        getLayover() {
+            this.layover
+        }
+        
+        getTotaltime() {
+            this.totalTime
+        }
+        
+  }
+
+  class User {
+    constructor(username, password, firstName, lastName, email, phone) {
+        this.username = username
+        this.password = password
+        this.firstName = firstName
+        this.lastName = lastName
+        this.email = email
+        this.phone = phone
     }
+
+    getUsername() {
+        this.username
+    }
+    getPassword() {
+        this.password
+    }
+
+
+    getFirstName() {
+        this.firstName
+    }
+    getLastName() {
+        this.lastName
+    }
+    getEmail() {
+        this.email
+    }
+    getPhone() {
+        this.phone
+    }
+}
 }])

@@ -2,7 +2,9 @@ package com.cooksys.flightBooking.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,12 +27,12 @@ public class ItineraryController {
 		this.userService = userService;
 	}
 
-	@RequestMapping(value="{itineraryId}", method=RequestMethod.GET)
+	@GetMapping("/{itineraryId}")
 	public Itinerary getItinerary(@PathVariable Integer itineraryId) {
-		return this.itineraryService.getUser(itineraryId);
+		return itineraryService.getUser(itineraryId);
 	}
 	
-	@RequestMapping(value="/{username}", method=RequestMethod.POST)
+	@PostMapping("/{username}")
 	public Itinerary create(@PathVariable String username) {
 		return this.itineraryService.create(username);	
 	}

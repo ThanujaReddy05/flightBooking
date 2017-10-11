@@ -8,6 +8,8 @@ import com.cooksys.flightBooking.entity.FlightUser;
 
 @Repository
 public interface UserRepository extends JpaRepository<FlightUser, Integer> {
+
+	FlightUser findByUsername(String username);
 	
 //	User getUserById(Long id);
 //
