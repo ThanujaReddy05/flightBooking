@@ -36,11 +36,11 @@ angular.module('flightBookingApp', ['ui.router', 'xeditable']).run(function (edi
             component: 'newUserComponent'
         }
 
-        // const sessionState = {
-        //     abstract: true,
-        //     name: 'session',
-        //     url: '/session',
-        //     component: 'sessionComponent'
+        // const mapState = {
+            
+        //     name: 'map',
+        //     url: '/map',
+        //     component: 'mapComponent'
         // }
 
         const accountState = {
@@ -64,7 +64,7 @@ angular.module('flightBookingApp', ['ui.router', 'xeditable']).run(function (edi
                 .state(historyState)
                 .state(accountState)
                 // .state(flightlistState)
-            // .state(tweetState)
+                // .state(mapState)
             // .state(userListState)
 
         $urlRouterProvider.otherwise('/title')

@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,7 +16,7 @@ import com.cooksys.flightBooking.service.UserService;
 
 @RestController
 @RequestMapping("itinerary")
-@CrossOrigin
+@CrossOrigin(origins="*")
 public class ItineraryController {
 
 	private final ItineraryService itineraryService;	
@@ -32,8 +33,8 @@ public class ItineraryController {
 		return itineraryService.getUser(itineraryId);
 	}
 	
-	@PostMapping("/{username}")
-	public Itinerary create(@PathVariable String username) {
-		return this.itineraryService.create(username);	
+	@PostMapping
+	public Itinerary create(@RequestBody Itinerary itinerary) {
+		return this.itineraryService.create(itinerary);	
 	}
 }

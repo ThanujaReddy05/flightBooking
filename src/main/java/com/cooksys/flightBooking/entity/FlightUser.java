@@ -127,6 +127,7 @@ public class FlightUser {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((username == null) ? 0 : username.hashCode());
 		return result;
 	}
 
@@ -145,9 +146,16 @@ public class FlightUser {
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
+		if (username == null) {
+			if (other.username != null)
+				return false;
+		} else if (!username.equals(other.username))
+			return false;
 		return true;
 	}
 
+
+	
 	
 
 	

@@ -1,7 +1,7 @@
 <div class="sessionTitle ">
         <!-- <div class="changeArea"> -->
                 <div class="sessionPanel3 ">
-                        Welcome, {{$ctrl.loginService.submission.username}}
+                        Welcome, {{$ctrl.utilService.submission.username}}
                         <div>
                                 <button class='btn btn-link' id='newUserButton' ng-click="$ctrl.account()">My Account</button>
                                 <button class='btn btn-link' id='newUserButton' ng-click="$ctrl.history()">History</button>
@@ -40,7 +40,7 @@
                                                                         </div>
                                                                         <div>
                                                                                 
-                                                                            <button class='formbutton' ng-click="$ctrl.createItinerary()">Book</button>
+                                                                            <button class='formbutton' ng-click="$ctrl.createItinerary(flight)">Book</button>
                                                                         </div>
                                                                     </div>
                                                                 </div>

@@ -49,7 +49,7 @@ public class UserController {
 		return userService.getAllUsers();
 	}
 	
-	@GetMapping("users/{username}")
+	@GetMapping("/{username}")
 	public FlightUser getUser(@PathVariable String username){
 		return userService.getUser(username);
 	}	
@@ -59,7 +59,7 @@ public class UserController {
 		return userService.getItinerary(username);
 	}
 	
-	@DeleteMapping("users/{userId}")
+	@DeleteMapping("/{userId}")
 	public UserModel deleteUser(@PathVariable Integer userId){
 		return userService.deleteUser(userId);
 	}

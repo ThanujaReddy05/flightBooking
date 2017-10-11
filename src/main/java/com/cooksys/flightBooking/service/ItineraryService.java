@@ -22,17 +22,20 @@ public class ItineraryService {
 	
 	
 
-	public Itinerary create(String username) {
+	public Itinerary create(Itinerary itinerary) {
 		FlightUser user = new FlightUser();
 		
 		for (FlightUser u : userRepo.findAll()) {
-			if (u.getUsername().equals(username)) {
+			if (u.getUsername().equals(itinerary.getUser())) {
 				user = u;
+				user.getItinerary().add(itinerary);
 			}
 		}
 		
-		Itinerary itinerary = new Itinerary(user);
-		this.itineraryRepo.save(itinerary);
+//		Itinerary itinerary = new Itinerary(user);
+		itineraryRepo.saveAndFlush(itinerary);
+		userRepo.saveAndFlush(user);
+		
 		return itinerary;
 	}
 	

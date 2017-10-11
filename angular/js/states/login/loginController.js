@@ -1,6 +1,9 @@
-angular.module('flightBookingApp').controller('loginController', ['loginService','$state',
-    function (loginService,$state) {
+angular.module('flightBookingApp').controller('loginController', ['loginService','utilService','$state',
+    function (loginService, utilService, $state) {
         
+
+        this.utilService = utilService
+
         this.submission = {}
 
         this.guest = () => {
@@ -13,6 +16,10 @@ angular.module('flightBookingApp').controller('loginController', ['loginService'
         this.login = () => {
             loginService.login(this.submission).then((succeedResponse) => {
                 $state.go('userAccount')
+            })
+            utilService.username = this.submission.username
+            loginService.getUser(utilService.username ).then((succeedResponse) => {
+                utilService.user = succeedResponse.data
             })
         }
 
