@@ -40,7 +40,7 @@ public class ItineraryService {
 		
 		Itinerary itinerary1 = new Itinerary(user);
 		itineraryRepo.saveAndFlush(itinerary);
-		userRepo.saveAndFlush(user);
+//		userRepo.saveAndFlush(user);
 		System.out.println(itinerary);
 //		System.out.println(itinerary1);
 		return itinerary;

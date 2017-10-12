@@ -16,7 +16,7 @@ angular.module('flightBookingApp').controller('userAccountController', ['utilSer
         }
         
         this.createItinerary = (flight) => {
-           
+           utilService.flight = flight
             this.itinerary = utilService.buildItinerary(this.user, flight)
             // console.dir(flight )
             console.dir(this.itinerary)

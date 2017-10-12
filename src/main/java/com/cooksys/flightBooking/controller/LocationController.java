@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -26,20 +27,20 @@ public class LocationController {
 //		this.locationService = locationService;
 //	}
 
-	@RequestMapping
+	@GetMapping
 	public List<Location> get() {
 		return locationService.getAll();
 	}
 
-	@RequestMapping("/{id}")
-	public Location get(@PathVariable("id") long id) {
-		return locationService.get(id);
-	}
+//	@GetMapping("/{id}")
+//	public Location get(@PathVariable long id) {
+//		return locationService.get(id);
+//	}
 	
-	@RequestMapping("/name")
-	public Location get(@RequestParam("name") String cityName)
+	@GetMapping("/{name}")
+	public Location get(@PathVariable String name)
 	{
-		return locationService.get(cityName);
+		return locationService.get(name);
 	}
 
 }

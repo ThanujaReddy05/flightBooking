@@ -9,6 +9,7 @@ angular.module('flightBookingApp').service('utilService', ['$state', function ($
 
     this.user = {}
 
+    this.flight = {}
     
 
     this.buildUser = (username, password, firstName, lastName, email, phone) => {
