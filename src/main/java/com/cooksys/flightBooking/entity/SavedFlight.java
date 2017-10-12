@@ -32,8 +32,7 @@ public class SavedFlight {
 	
 	public SavedFlight() {
 		
-	}
-	
+	}	
 	
 	public SavedFlight(String origin, String destination, int flightTime, int offset) {
 		
@@ -46,11 +45,6 @@ public class SavedFlight {
 		
 	}
 	
-	
-	
-	
-
-
 	public SavedFlight(Integer id, String origin, String destination, int flightTime, int offset) {
 		
 		this.id = id;
@@ -61,8 +55,6 @@ public class SavedFlight {
 		this.layover = 1;
 		this.totalTime = flightTime;
 	}
-
-
 	
 
 	public Integer getId() {

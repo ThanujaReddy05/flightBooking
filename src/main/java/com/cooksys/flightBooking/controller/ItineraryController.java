@@ -24,7 +24,7 @@ public class ItineraryController {
 	private final ItineraryService itineraryService;	
 	private final UserService userService;
 	
-	@Autowired
+
 	public ItineraryController(ItineraryService itineraryService, UserService userService) {		
 		this.itineraryService = itineraryService;
 		this.userService = userService;

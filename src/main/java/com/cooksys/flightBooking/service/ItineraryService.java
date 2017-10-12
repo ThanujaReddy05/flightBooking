@@ -15,7 +15,7 @@ public class ItineraryService {
 	private final ItineraryRepository itineraryRepo;
 	private final UserRepository userRepo;
 	
-	@Autowired
+	
 	public ItineraryService(ItineraryRepository itineraryRepo, UserRepository userRepo) {		
 		this.itineraryRepo = itineraryRepo;
 		this.userRepo = userRepo;

@@ -16,8 +16,11 @@ angular.module('flightBookingApp').controller('userAccountController', ['utilSer
         this.createItinerary = (flight) => {
             utilService.flight = flight
             this.itinerary = utilService.buildItinerary(this.user, flight)
+            console.dir(this.itinerary)
             userAccountService.createItinerary(this.itinerary).then((succeedResponse) => {
+                // console.log(succeedResponse)
                 this.reitinerary = succeedResponse.data
+                console.dir(this.reitinerary )
             })
             $state.go('map')
         }
