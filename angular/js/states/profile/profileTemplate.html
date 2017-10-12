@@ -2,53 +2,25 @@
     <div class="changeArea">
         <div class="sessionPanel3 ">
             My Profile
-
             <div class="sessionPanel3">
-
-
-                <div class="account formtitle"  ng-click="$ctrl.toggle()">Account Details
-                        <div id="text" ng-hide="visibility">
-                    <div >
-                        <div class="formbuttonsmall" ng-click="$ctrl.deactivateUser()">Deactivate</div>
+                <div class="account formtitle" ng-click="$ctrl.toggle()">Account Details
+                    <div id="text" ng-hide="visibility">
+                        <div>
+                            <div class="formbuttonsmall" ng-click="$ctrl.deactivateUser()">Deactivate</div>
+                        </div>
+                        <div class="formbody">
+                            <div>First Name </div>
+                            <div class="form-text jay-a ">{{ $ctrl.firstName }} </div>
+                            <div>Last Name </div>
+                            <div class="form-text jay-a "> {{ $ctrl.lastName }}</div>
+                            <div>Email Address </div>
+                            <div class="form-text jay-a ">{{ $ctrl.email }}</div>
+                            <div>Phone </div>
+                            <div class="form-text jay-a "> {{ $ctrl.phone }} </div>
+                        </div>
                     </div>
-
-                    <div class="formbody">
-
-                        <div>
-                            First Name 
-                        </div>
-                        <div class="form-text jay-a ">
-                            {{ $ctrl.firstName }}
-                        </div>
-
-                        <div>
-                            Last Name
-                        </div>
-                        <div class="form-text jay-a ">
-                            {{ $ctrl.lastName }}
-                        </div>
-
-                        <div>
-                            Email Address
-                        </div>
-                        <div class="form-text jay-a ">
-                            {{ $ctrl.email }}
-                        </div>
-
-                        <div>
-                            Phone
-                        </div>
-                        <div class="form-text jay-a ">
-                            {{ $ctrl.phone }}
-                        </div>
-
-                    </div>
-
                 </div>
-</div>
-                <div > <button class = "formbutton" >View History </button></div>
-
-                
+                <div> <button class="formbutton"ui-sref = 'history' >View History </button></div>
             </div>
         </div>
     </div>

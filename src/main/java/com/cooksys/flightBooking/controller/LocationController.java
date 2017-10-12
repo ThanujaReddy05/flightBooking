@@ -18,14 +18,12 @@ import com.cooksys.flightBooking.service.LocationService;
 @CrossOrigin
 public class LocationController {
 	
-	@Autowired
+
 	private LocationService locationService;
 	
-//	private LocationService locationService;
-//	
-//	public LocationController(LocationService locationService) {
-//		this.locationService = locationService;
-//	}
+	public LocationController(LocationService locationService) {
+		this.locationService = locationService;
+	}
 
 	@GetMapping
 	public List<Location> get() {

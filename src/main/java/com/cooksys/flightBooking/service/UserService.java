@@ -13,15 +13,11 @@ import com.cooksys.flightBooking.repository.UserRepository;
 @Service
 public class UserService {
 
-	
-	@Autowired
 	UserRepository userRepo;
 	
-//	UserRepository userRepo;
-//	
-//	public UserService(UserRepository userRepo) {
-//		this.userRepo = userRepo;
-//	}
+	public UserService(UserRepository userRepo) {
+		this.userRepo = userRepo;
+	}
 	
 	
 

@@ -9,10 +9,18 @@ angular.module('flightBookingApp').controller('profileController', ['utilService
         this.phone = utilService.user.phone
 
         this.deactivateUser = () => {
-            profileService.deactivateUser().then((succeedResponse) => {
-               
+            profileService.deactivateUser().then((succeedResponse) => {               
                 $state.go('title')
             })
+        }
+
+        this.viewHistory = () => {
+            profileService.getItinerary(utilService.username).then((succeedResponse) => {               
+                utilService.itinerary = succeedResponse.data
+                console.dir( utilService.itinerary)
+                $state.go('history')
+            })
+
         }
 
         this.toggle = () => {

@@ -2,10 +2,6 @@ angular.module('flightBookingApp').controller('newUserController', ['utilService
     function (utilService, newUserService, $state) {
 
         this.createUser = () => {
-            // if (this.submission.username !== '' &&
-            //     this.submission.password !== '' &&
-            //     this.submission.email !== '') {
-
                 const user = utilService.buildUser(
                     this.submission.username,
                     this.submission.password,
@@ -14,8 +10,7 @@ angular.module('flightBookingApp').controller('newUserController', ['utilService
                     this.submission.email,
                     this.submission.phone)
 
-                newUserService.createNewUser(user).then((succeedResponse) => {
-                    // User created, data will contain dto of user without its password
+                newUserService.createNewUser(user).then((succeedResponse) => {                    
                     $state.go('userAccount')
                 })
             }

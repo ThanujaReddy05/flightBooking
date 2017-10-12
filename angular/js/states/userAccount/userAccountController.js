@@ -1,11 +1,9 @@
-angular.module('flightBookingApp').controller('userAccountController', ['utilService','userAccountService','$state',
+angular.module('flightBookingApp').controller('userAccountController', ['utilService', 'userAccountService', '$state',
     function (utilService, userAccountService, $state) {
 
         this.utilService = utilService
         this.reitinerary = {}
         this.user = utilService.user
-
-        // this.flight = " "
 
         this.history = () => {
             $state.go('profile')
@@ -14,18 +12,14 @@ angular.module('flightBookingApp').controller('userAccountController', ['utilSer
         this.account = () => {
             $state.go('profile')
         }
-        
+
         this.createItinerary = (flight) => {
-           utilService.flight = flight
+            utilService.flight = flight
             this.itinerary = utilService.buildItinerary(this.user, flight)
-            // console.dir(flight )
-            console.dir(this.itinerary)
-            userAccountService.createItinerary( this.itinerary).then((succeedResponse) => {
-                console.log(succeedResponse)
+            userAccountService.createItinerary(this.itinerary).then((succeedResponse) => {
                 this.reitinerary = succeedResponse.data
-                console.dir(this.reitinerary )
-            })    
-           $state.go('map')
+            })
+            $state.go('map')
         }
     }
 ])

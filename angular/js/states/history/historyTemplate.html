@@ -1,13 +1,8 @@
-<div class="sessionTitle sessionPanel3">
-    Welcome, {{$ctrl.utilService.username}}
-    <div>
-        <button class='btn btn-link' id='newUserButton' ng-click="$ctrl.account()">My Account</button>
-        <button class='btn btn-link' id='newUserButton' ng-click="$ctrl.history()">History</button>
-    </div>
-    <div class="sessionTitle changeArea sessionPanel3">
-        Available Flights are
+<div class="sessionTitle changeArea">
+    <div class="sessionPanel3">
+        Your Itinerary History
         <div class="sessionPanel3">
-            <div class="jay-box" ng-repeat="flight in $ctrl.utilService.paths">
+            <div class="jay-box" ng-repeat="flight in $ctrl.utilService.itinerary">
                 <div class="formtitle"> Flight Path</div>
                 <div class="formbody">
                     <div>{{ flight.origin }} ----- {{ flight.destination }}</div>
@@ -18,7 +13,9 @@
                         <div> Total Time : {{ flight.totalTime }}</div>
                     </div>
                 </div>
-                <div><button class='formbutton' ng-click="$ctrl.createItinerary(flight)">Book</button> </div>
+                <div class="formfooter">
+                    <button class='formbutton' ng-click="$ctrl.map()">View on Map</button>
+                </div>
             </div>
         </div>
     </div>

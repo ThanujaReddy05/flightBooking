@@ -1,31 +1,22 @@
+<div class="sessionTitle changeArea sessionPanel3">
+    Create New Acccount
+    <div class="sessionPanel3">
+        <div class="jay-box">
+            <div class="formtitle formsubtitle">*required</div>
+            <div class="formbody">
+                <div>Username*</div> <input type="text" class="form-text" ng-model="$ctrl.submission.username">
+                <div>Password*</div> <input type="password" class="form-text" ng-model="$ctrl.submission.password">
+                <div>First Name</div> <input type="text" class="form-text" ng-model="$ctrl.submission.firstName">
+                <div>Last Name</div> <input type="text" class="form-text" ng-model="$ctrl.submission.lastName">
+                <div>Phone</div> <input type="text" class="form-text" ng-model="$ctrl.submission.phone">
+                <div>Email*</div> <input ng-keyup="$event.keyCode == 13 && $ctrl.createNewUser()" type="text" class="form-text"
+                    ng-model="$ctrl.submission.email">
+            </div>
+            <div class="formfooter">
+                <button class='formbutton' ng-click='$ctrl.createUser()'>Create Account</button>
+            </div>
+            <button class='btn btn-link' id='existingAccount' ui-sref='login'>Already have an account?</button>
 
-<div class="sessionTitle ">
-        <div class="changeArea">
-            <div class="sessionPanel3 ">
-                    Create New Acccount
-    
-                <div class="sessionPanel3">
-
-
-
-<div class="jay-box">
-    <div class="formtitle">
-        <div class="formsubtitle">*required</div>
+        </div>
     </div>
-
-    <div class="formbody">
-
-        <div>Username*</div> <input type="text" class="form-text" ng-model="$ctrl.submission.username">
-        <div>Password*</div> <input type="password" class="form-text"  ng-model="$ctrl.submission.password">
-        <div>First Name</div> <input type="text" class="form-text"  ng-model="$ctrl.submission.firstName">
-        <div>Last Name</div> <input type="text" class="form-text"  ng-model="$ctrl.submission.lastName">
-        <div>Phone</div> <input type="text" class="form-text"  ng-model="$ctrl.submission.phone">
-        <div>Email*</div> <input ng-keyup="$event.keyCode == 13 && $ctrl.createNewUser()" type="text" class="form-text"  ng-model="$ctrl.submission.email">
-        
-    </div>
-<div class="formfooter">
-    <button class='formbutton' ng-click='$ctrl.createUser()'>Create Account</button>
-</div>
-<button class='btn btn-link' id='existingAccount' ui-sref='userAccount'>Already have an account?</button>
-
 </div>

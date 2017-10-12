@@ -17,29 +17,18 @@ import com.cooksys.flightBooking.repository.SavedFlightRepository;
 @Service
 public class FlightService {
 
-	
-	@Autowired
-	FlightGenerator generator;
-	
-	@Autowired
-	SavedFlightRepository savedFlightRepo;
-
-	@Autowired
-	ItineraryRepository itineraryRepo;
-	
+		
+	private FlightGenerator generator;	
+	private SavedFlightRepository savedFlightRepo;	
+	private ItineraryRepository itineraryRepo;
 	private ArrayList<SavedFlight> flightList = new ArrayList<>();
+
 	
-//	private FlightGenerator generator;	
-//	private SavedFlightRepository savedFlightRepo;	
-//	private ItineraryRepository itineraryRepo;
-//	private ArrayList<SavedFlight> flightList = new ArrayList<>();
-//
-//	
-//	public FlightService(FlightGenerator generator, SavedFlightRepository savedFlightRepo, ItineraryRepository itineraryRepo ) {
-//		this.generator = generator;
-//		this.savedFlightRepo = savedFlightRepo;
-//		this.itineraryRepo = itineraryRepo;
-//	}
+	public FlightService(FlightGenerator generator, SavedFlightRepository savedFlightRepo, ItineraryRepository itineraryRepo ) {
+		this.generator = generator;
+		this.savedFlightRepo = savedFlightRepo;
+		this.itineraryRepo = itineraryRepo;
+	}
 	
 	
 	public ArrayList<SavedFlight> getDailyFlightList() {
@@ -55,7 +44,6 @@ public class FlightService {
 		
 	}
 
-	
 	
 	public List<List<SavedFlight>> groupFlightsByOrigin() {
 		List<List<SavedFlight>> outerList = new ArrayList<>();
@@ -93,7 +81,7 @@ public class FlightService {
 		if (!innerListNashville.isEmpty()) {
 			outerList.add(innerListNashville);
 		}
-//		System.out.println(outerList);
+
 		return outerList;
 	}
 
@@ -105,16 +93,14 @@ public class FlightService {
 		List<SavedFlight> flights = new ArrayList<>();
 		
 		visited.add(origin);
-//		System.out.println(visited);
 		
 		for (List<SavedFlight> list : groupFlightsByOrigin()) {
-//			System.out.println(list);
 			if (list.get(0).getOrigin().equals(origin)) {
 				flights = list;
 				break;
 			}
 		}
-		System.out.println(flights);
+		
 		for (SavedFlight flight : flights) {
 			if (visited.contains(flight.getDestination())) {
 				continue;

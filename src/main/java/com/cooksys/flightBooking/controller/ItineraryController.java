@@ -37,9 +37,9 @@ public class ItineraryController {
 	
 	@PostMapping
 	public Itinerary create(@RequestBody Itinerary itinerary) {
-		if (itinerary == null) {
-			return null;
-		}
+//		if (itinerary == null) {
+//			return null;
+//		}
 		return itineraryService.create(itinerary );	
 	}
 }

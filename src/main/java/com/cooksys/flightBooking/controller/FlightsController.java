@@ -24,19 +24,15 @@ import com.cooksys.flightBooking.service.LocationService;
 @CrossOrigin
 public class FlightsController {
 	
-	@Autowired
-	LocationService locationService;
+
 	
-	@Autowired
-	FlightService flightService;
+	private LocationService locationService;	
+	private FlightService flightService;
 	
-//	private LocationService locationService;	
-//	private FlightService flightService;
-//	
-//	public FlightsController(LocationService locationService, FlightService flightService ) {
-//		this.locationService = locationService;
-//		this.flightService = flightService;
-//	}
+	public FlightsController(LocationService locationService, FlightService flightService ) {
+		this.locationService = locationService;
+		this.flightService = flightService;
+	}
 	
 	@GetMapping
 	public ArrayList<SavedFlight> getFlightList()
@@ -49,7 +45,6 @@ public class FlightsController {
 		return flightService.groupFlightsByOrigin();		
 	}
 
-//	@RequestMapping(value = "{origin}/{destination}")
 	@GetMapping("{origin}/{destination}")
 	public List<List<SavedFlight>> findPaths(@PathVariable String origin, @PathVariable String destination){
 		return flightService.findPaths(origin,destination);

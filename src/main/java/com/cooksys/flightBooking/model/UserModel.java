@@ -17,11 +17,23 @@ public class UserModel {
 	private String phone;
 	@JsonIgnore
 	private List<Itinerary> itinerary;
-	
+
 	public static UserModel createUserModel(FlightUser u) {
 		return new UserModel(u);
 	}
-	
+
+	public UserModel(FlightUser u) {
+
+		this.id = u.getId();
+		this.firstName = u.getFirstName();
+		this.lastName = u.getFirstName();
+		this.username = u.getUsername();
+		this.email = u.getEmail();
+		this.phone = u.getPhone();
+		this.itinerary = u.getItinerary();
+	}
+
+
 	public static List<UserModel> createUserModels(List<FlightUser> list) {
 		ArrayList<UserModel> result = new ArrayList<>();
 		for (FlightUser u : list) {
@@ -38,7 +50,7 @@ public class UserModel {
 		this.id = id;
 	}
 
-	
+
 	public String getUsername() {
 		return username;
 	}
@@ -87,14 +99,5 @@ public class UserModel {
 		this.itinerary = itinerary;
 	}
 
-	public UserModel(FlightUser u) {
-		
-		this.id = u.getId();
-		this.firstName = u.getFirstName();
-		this.lastName = u.getFirstName();
-		this.username = u.getUsername();
-		this.email = u.getEmail();
-		this.phone = u.getPhone();
-		this.itinerary = u.getItinerary();
-	}
+
 }

@@ -1,16 +1,8 @@
 angular.module('flightBookingApp', ['ui.router', 'ngMap']).config(['$stateProvider', '$urlRouterProvider',
     function ($stateProvider, $urlRouterProvider) {
         
-        // const flightlistState = {
-           
-        //     name: 'flightlist',
-        //     url: '/flightlist',
-        //     component: 'flightlistComponent'
-        // }
-
-
-        const titleState = {
-            // abstract: true,
+       
+        const titleState = {           
             name: 'title',
             url: '/title',
             component: 'titleComponent'
@@ -34,8 +26,7 @@ angular.module('flightBookingApp', ['ui.router', 'ngMap']).config(['$stateProvid
             component: 'newUserComponent'
         }
 
-        const mapState = {
-            
+        const mapState = {            
             name: 'map',
             url: '/map',
             component: 'mapComponent'
@@ -65,8 +56,7 @@ angular.module('flightBookingApp', ['ui.router', 'ngMap']).config(['$stateProvid
                 .state(loginState)
                 .state(newUserState)
                 .state(historyState)
-                .state(accountState)
-                // .state(flightlistState)
+                .state(accountState)               
                 .state(mapState)
                 .state(profileState)
 

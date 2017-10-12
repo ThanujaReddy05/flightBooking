@@ -1,15 +1,9 @@
-/* @font-face {
-    font-family: "Bird Feather";
-    /* src: url(BirdFeather.ttf); */
-/* } */ 
 
 body {
     display: flex;
-    /* background-image: url("/img/peacock.jpg"); */
     background-attachment: fixed;
     background-repeat: repeat;
     background-position: center;
-    /* cursor: url('featherIcon48x48.png'); */
 }
 
 div {
@@ -26,7 +20,6 @@ label {
 .sessionPanel2 {
     display: flex;
     flex-direction: row;
-    /* max-width: 95vw; */
     align-content: center;
     justify-content: center;
     align-items: center
@@ -38,8 +31,6 @@ label {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* max-width: 78vw;
-} */
 }
 
 .changeArea {
@@ -53,54 +44,13 @@ label {
     justify-content: center;
 }
 
-.search {
-    background-color: rgb(64, 108, 55);
-}
-
-.search-bar {
-    width: 13vw;
-    min-width: 85px;
-    height: 5%;
-    min-height: 30px;
-    border-width: 0px;
-    border-radius: 3px;
-}
-
-.search-button {
-    height: 100%;
-    width: 3vw;
-    background-color: rgb(64, 108, 55);
-    color: white;
-    border-color: rgb(158, 75, 35);
-    border-width: 0px 0px 0px 1px;
-    margin-top: 1px;
-    margin-bottom: 1px;
-    margin-left: 1px;
-}
-
-.sessionFixedColumn {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    height: 98vh;
-    max-height: 98vh;
-    width: 20vw;
-    min-width: 100px;
-    background-color: rgb(64, 108, 55);
-    border-right: 1px;
-    border-color: rgb(118, 53, 23);
-    order: -1;
-}
-
-.sessionTitle2,
-.sessionFixedColumn {
+.sessionTitle2 {
     position: sticky;
     top: 0px;
 }
 
 .sessionTitle,
 .sessionTitle2 {
-    /* align-self: flex-start; */
     text-align: center;
     min-height: 100vh;
     width: 100vw;
@@ -108,7 +58,6 @@ label {
     align-items: center;
     color: white;
     background: linear-gradient(rgba(8, 37, 105, 0.95), rgba(4, 92, 120, 0.1));
-    /* margin-bottom: 3vh; */
     font-size: x-large;
     
 }
@@ -128,9 +77,7 @@ label {
 
 .sessionTitle2 {
     width: 100vw;
-    /* align-self: flex-start; */
     align-items: center;
-    /* padding-top: 1vh; */
     justify-content: space-between;
 }
 
@@ -142,18 +89,15 @@ label {
     border-radius: 2vh;
     box-shadow: 1px 1px 0px 1px rgba(8, 36, 105, 0.80);
     background-color: rgb(63, 66, 141);
-    /* background: radial-gradient(rgba(8, 37, 105, 0.95), rgba(4, 92, 120, 0.92)); */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     margin-top: 2vh;
-    /* margin-bottom: 2vh; */
     padding-left: 2vw;
     padding-right: 2vw;
     padding-top: 1vh;
     padding-bottom: 1vh;
-    /* font-size: large; */
     overflow: auto;
 }
 
@@ -191,18 +135,8 @@ label {
     min-height: 20vh;
 }
 
-.tagsAndMentions {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    max-width: 25vw;
-    color: rgb(50, 195, 164) !important;
-    cursor: pointer;
-}
-.tag:hover, .jay-a:hover
-{
-    text-decoration: underline;
-}
+
+
 .formlabel {
     font-size: large;
     margin-top: 1vh;
@@ -232,38 +166,6 @@ label {
     
 }
 
-input {
-    text-align: center;
-    
-}
-.form-text
-{
-    /* cursor: url(feathercursor48x48.png), pointer ; */
-    color : black;
-    border-radius: 1vw;
-    border-width: 1px 1px 1px 1px;
-    max-width: 25vw;
-    margin-bottom: 2px;
-}
-::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color:    darkgray;
-}
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-   color:    darkgray;
-   opacity:  1;
-}
-::-moz-placeholder { /* Mozilla Firefox 19+ */
-   color:    darkgray;
-   opacity:  1;
-}
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-   color:    darkgray;
-}
-::-ms-input-placeholder { /* Microsoft Edge */
-   color:    darkgray;
-}
-
-
 .formbuttonsmall,.replybutton {
     background-color: rgb(118, 53, 23);
     font-size: small;
@@ -273,8 +175,16 @@ input {
     border-radius: 3px;
 }
 
-.replybutton {
-    background-color: rgb(64, 108, 55);
+input {
+    text-align: center;
+    
+}
+.form-text{    
+    color : black;
+    border-radius: 1vw;
+    border-width: 1px 1px 1px 1px;
+    max-width: 25vw;
+    margin-bottom: 2px;
 }
 
 .jnavbutton {
@@ -288,12 +198,7 @@ input {
 {
     background-color: rgb(50, 195, 164);
 }
-.editable
-{
-    font-size: medium;
-    margin-bottom: 1vh;
-    color: rgb(50, 195, 164) !important;
-}
+
 .formbutton {
     margin-top: 2vh;
     margin-left: 1vw;
@@ -302,7 +207,6 @@ input {
 }
 
 strong {
-    /* font-family: 'Bird Feather'; */
     font-size: 100px;
     text-align: right;
     color: white;
@@ -316,11 +220,6 @@ strong {
 #newUserButton,
 #existingAccount {
     color: white;
-}
-
-::selection {
-    background-color: rgb(99, 138, 23);
-    color: #fff;
 }
 
 ng-map {

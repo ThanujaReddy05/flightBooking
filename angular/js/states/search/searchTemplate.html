@@ -1,67 +1,19 @@
-<!-- <div class="sessionTitle ">
-    <div class="changeArea">
-        <div class="sessionPanel3 ">
-            Available Flights are
-
-            <div class="sessionPanel3">
-                <div class="jay-box">
-                    <div class="formtitle">Search Results </div>
-
-                    <div class="formbody">
-
-                        <div>Origin to Destination</div>
-                        <div> {{$ctrl.utilService.path}} </div>
-                    </div>
-                    <div class="formfooter">
-                        <button class='formbutton' ng-click="$ctrl.bookFlight()">Book Flight</button>
-                    </div>
-
+<div class="sessionTitle changeArea sessionPanel3">
+    Available Flights are
+    <div class="sessionPanel3">
+        <div class="jay-box" ng-repeat="flight in $ctrl.utilService.paths">
+            <div class="formtitle"> Flight Path</div>
+            <div class="formbody">
+                <div>{{ flight.origin }} ----- {{ flight.destination }}</div>
+                <div>
+                    <div>Flight Time : {{ flight.flightTime }}</div>
+                    <div> Offset : {{ flight.offset }} </div>
+                    <div> Layover : {{ flight.layover }}</div>
+                    <div> Total Time : {{ flight.totalTime }}</div>
                 </div>
             </div>
-        </div>
-
-    </div>
-
-   
-</div> -->
-<div class="sessionTitle ">
-    <div class="changeArea">
-        <div class="sessionPanel3 ">
-            Available Flights are
-
-            <div class="sessionPanel3">
-                <!-- <ui-view></ui-view> -->
-                <div class="jay-box" ng-repeat="flight in $ctrl.utilService.paths">
-                    <div class="formtitle"> Flight Path
-                        <!-- <a class="jay-a" ng-click="$ctrl.bookFlight()"> {{ tweet.author.username }}</a>
-                <div class="formsubtitle">{{ tweet.posted | date }}</div> -->
-                    </div>
-
-                    <div class="formbody">
-                        <div>
-                            {{ flight.origin }} ----- {{ flight.destination }}
-                        </div>
-                        <div>
-                            <div>Flight Time : {{ flight.flightTime }}</div>
-                            <div> Offset : {{ flight.offset }} </div>
-                            <div> Layover : {{ flight.layover }}</div>
-                            <div> Total Time : {{ flight.totalTime }}</div>
-                        </div>
-
-                        
-                    </div>
-
-
-                    <div class="formfooter">
-                            <button class='formbutton' ng-click="$ctrl.bookFlight()">
-                                login to Book
-                            </button>
-                    </div>
-                    <!-- <div>
-                            <userAccount-component>  </userAccount-component>
-                        <button class='formbutton' ng-click="">Book Flight</button>
-                    </div> -->
-                </div>
+            <div class="formfooter">
+                <button class='formbutton' ng-click="$ctrl.bookFlight()">login to Book</button>
             </div>
         </div>
     </div>

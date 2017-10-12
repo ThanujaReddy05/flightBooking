@@ -27,7 +27,6 @@ function (utilService, mapService, $state) {
   
     
   
-      // add markers from an angular constant
       const { memphis, nashville, knoxville } = locations
       const markers = [utilService.flight.origin, utilService.flight.destination]
 
@@ -49,27 +48,16 @@ function (utilService, mapService, $state) {
   
       markers.forEach(marker => addMarker(marker))
   
-      // add paths manually
       const paths = [
-        [utilService.flight.origin, utilService.flight.destination, '#CC0099']
-        // [nashville, knoxville, '#AA1100']
+        [memphis, nashville, '#CC0099']
+       
       ]
   
       paths.forEach(args => addPath(...args))
   
-      // add path from webservice
-      mapService.getMarkerByCityName(utilService.flight.destination).then((succeedResponse) => {
-        // console.dir(utilService.flight.origin)
-        //   console.dir(succeedResponse.data)
+      mapService.getMarkerByCityName(utilService.flight.destination).then((succeedResponse) => {        
            this.destination = succeedResponse.data
          addPath(utilService.flight.origin, this.destination, '#FF3388')
-        })
-    
+        }) 
   
-   
-  
-   
-  
-  
-}
-])
+}])
